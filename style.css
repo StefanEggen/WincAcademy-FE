@@ -1,0 +1,171 @@
+/*
+Hoe krijg ik het logo in het midden? ik mis iets.....
+In eerste instatie met onderstaande geprobeerd
+.img-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100px;
+  height: 100px;
+}
+Maar logo blijft dan links staan, dus toen gegoogled en met display: block gedaan, dat leverde wel het gewenste resultaat op
+*/
+
+.img-home {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100px;
+  height: 100px;
+}
+
+.menu-items {
+  padding: 25px 25px;
+  border: 3px solid #9b7c71;
+  margin: 25px 10px;
+  background-color: #eec6a4;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+body {
+  background-color: beige;
+  font-family: "Neucha";
+  font-size: 14px;
+  color: #9b7c71;
+}
+
+.tekst {
+  padding: 0px 10px;
+  margin: 0px 10px;
+  text-align: center;
+}
+
+/*
+Is onderstaand de juiste oplossing om styling van urls voor menu items te overschrijven? Ik wil dat ze wel als link werken maar niet met de standaard opmaak. 
+Of kan dat ook anders?
+*/
+
+.menu-items a:link {
+  /* unvisited link */
+  text-decoration: none;
+  color: #9b7c71;
+}
+
+.menu-items a:visited {
+  /* visited link */
+  text-decoration: none;
+  color: #9b7c71;
+}
+
+.menu-items a:hover {
+  /* mouse over link */
+  text-decoration: none;
+  color: #9b7c71;
+}
+.menu-items a:active {
+  /* active link */
+  text-decoration: none;
+  color: #9b7c71;
+}
+
+h2 {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+Ik wil het instagram logo als link laten werken. Maar hoe krijg ik de streep onder het instagram logo in de footer weg? Dat het dus geen zichtbare link is?
+*/
+
+.instagram {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.fa-instagram {
+  background: beige;
+  color: #9b7c71;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+}
+
+/*
+Ik wil eigenlijk alle afbeeldingen in .galerij in hetzelfde formaat krijgen, maar hoe?
+Waarom is bij de eerste afbeelding (vos) een pijltje in de afbeelding zichtbaar, alsof er nog een afbeelding achter zit?
+Volgens mij klopt mijn grid aanpak nog niet volledig...
+*/
+
+.galerij {
+  display: grid;
+  place-items: center;
+  grid-template-rows: repeat(12 1fr);
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+form {
+  padding: 25px 25px;
+  border: 3px solid #9b7c71;
+  border-radius: 25px;
+  background-color: #eec6a4;
+  margin: 25px 40px;
+  text-align: center;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+/* Media querie voor desktop weergave */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  .img-home {
+    max-width: 150px;
+    height: 150px;
+  }
+  .galerij {
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(12 1fr);
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+}
+
+/* Media querie voor XL weergave */
+@media screen and (min-width: 1280px) {
+  body {
+    font-size: 22px;
+  }
+  .img-home {
+    max-width: 200px;
+    height: 200px;
+  }
+  .galerij {
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(12 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+}
